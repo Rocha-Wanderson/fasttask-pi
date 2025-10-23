@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Dashboard
+{% endblock page_title %}
+
+
+{% block styles %}
+    {{ block.super }} <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+
+    <div class="dashboard-grid">
+
+        <div class="card card-pendente">
+            <h2>Tarefas Pendentes</h2>
+            <p class="card-numero">{{ pendentes }}</p>
+        </div>
+
+        <div class="card card-andamento">
+            <h2>Tarefas Em Andamento</h2>
+            <p class="card-numero">{{ andamento }}</p>
+        </div>
+
+        <div class="card card-concluida">
+            <h2>Tarefas Concluídas</h2>
+            <p class="card-numero">{{ concluidas }}</p>
+        </div>
+
+        <div class="card-logo">
+            <img src="{% static 'images/logo-fastline.png' %}" alt="Logo Fast Line">
+        </div>
+
+    </div>
+
+{% endblock content %}

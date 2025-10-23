@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastTask</title>
+    
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dark-mode.css' %}">
+    {% endblock styles %}
+</head>
+<body>
+
+    <header class="cabecalho">
+        <header class="cabecalho">
+    <h1>{% block page_title %}{% endblock page_title %}</h1>
+
+    <div id="dark-mode-toggle" class="modo-escuro-btn">
+        🌙 </div>
+</header>
+    </header>
+
+    <main class="conteudo">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <nav class="navegacao">
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    <a href="{% url 'adicionar_tarefa' %}" class="nav-adicionar">+ Adicionar</a>
+    <a href="{% url 'minhas_tarefas' %}">Minhas Tarefas</a>
+</nav>
+    <script src="{% static 'js/dark-mode-toggle.js' %}"></script>
+</body>
+</html>

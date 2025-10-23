@@ -1,0 +1,91 @@
+/* ======================== */
+/* RESET BÁSICO E FONTES    */
+/* ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Fonte simples de aplicativo */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Organiza tudo em coluna (Mobile-First) */
+    min-height: 100vh; /* Altura mínima de 100% da tela */
+    background-color: #f4f4f4; /* Um cinza bem claro para o fundo */
+}
+
+/* ======================== */
+/* LAYOUT PRINCIPAL         */
+/* ======================== */
+.conteudo {
+    flex-grow: 1; /* Faz o conteúdo principal crescer e empurrar o menu para baixo */
+    padding: 20px;
+}
+
+/* ======================== */
+/* CABEÇALHO (do Figma)     */
+/* ======================== */
+.cabecalho {
+    width: 100%;
+    height: 60px; /* Altura que definimos no Figma */
+    background-color: #3B5998; /* Um tom de azul (Mude se quiser) */
+    color: white;
+    
+    /* Centraliza o título h1 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecalho h1 {
+    font-size: 24px; /* Tamanho do "FastTask" no Figma */
+    font-weight: bold;
+}
+
+/* ======================== */
+/* NAVEGAÇÃO (do Figma)     */
+/* ======================== */
+.navegacao {
+    width: 100%;
+    height: 70px; /* Altura que definimos no Figma */
+    background-color: white;
+    
+    /* Adiciona a sombra que colocamos no Figma */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+    
+    /* Organiza os botões */
+    display: flex;
+    justify-content: space-around; /* Espaço igual entre eles */
+    align-items: center;
+}
+
+.navegacao a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Estilo do botão "+ Adicionar" */
+.navegacao a.nav-adicionar {
+    font-weight: bold;
+    color: #3B5998; /* Cor de destaque */
+}
+
+/* ======================== */
+/* BOTÃO MODO ESCURO        */
+/* ======================== */
+.cabecalho {
+    position: relative; /* Necessário para posicionar o botão dentro */
+    /* ... (outros estilos do cabeçalho que já estavam lá) ... */
+}
+
+.modo-escuro-btn {
+    position: absolute; /* Posiciona o botão em relação ao cabeçalho */
+    right: 20px; /* Alinha à direita */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    font-size: 24px; /* Tamanho do ícone/emoji */
+    cursor: pointer; /* Muda o mouse para mãozinha */
+    user-select: none; /* Evita que o usuário selecione o emoji */
+}

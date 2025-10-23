@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Adicionar Tarefa
+{% endblock page_title %}
+
+
+{% block styles %}
+    {{ block.super }} <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+
+    <form action="" method="POST" class="form-task">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="titulo">Título da Tarefa</label>
+            <input type="text" id="titulo" name="titulo">
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição (Opcional)</label>
+            <textarea id="descricao" name="descricao" rows="4"></textarea>
+        </div>
+
+        <div class="form-group-inline">
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Concluída">Concluída</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="prioridade">Prioridade</label>
+                <select id="prioridade" name="prioridade">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group-inline">
+            <div class="form-group">
+                <label for="responsavel">Atribuir para:</label>
+                <select id="responsavel" name="responsavel">
+                    <option value="" disabled selected>--- Escolha um responsável ---</option>
+                    {% for usuario in usuarios_da_fastline %}
+                        <option value="{{ usuario.id }}">{{ usuario.username }}</option>
+                    {% endfor %}
+                </select>
+        </div>
+            <div class="form-group">
+                <label for="data_limite">Data Limite (Prazo):</label>
+                <input type="date" id="data_limite" name="data_limite">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="observacoes">Observações (Motorista)</label>
+            <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn-salvar">SALVAR TAREFA</button>
+        </div>
+
+    </form>
+
+{% endblock content %}

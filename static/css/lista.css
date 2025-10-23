@@ -1,0 +1,66 @@
+/* ======================== */
+/* ESTRUTURA DA LISTA       */
+/* ======================== */
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre cada card de tarefa */
+}
+
+/* ======================== */
+/* ESTILO DO CARD DE TAREFA */
+/* ======================== */
+.card-tarefa {
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    border-left: 5px solid #ccc; /* Borda padrão */
+}
+
+.card-tarefa-header {
+    display: flex;
+    justify-content: space-between; /* Título na esquerda, Tag na direita */
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-tarefa h3 {
+    font-size: 18px;
+    color: #333;
+    /* Evita que títulos muito longos quebrem o layout */
+    word-break: break-word; 
+}
+
+.card-tarefa p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+.card-tarefa p strong {
+    color: #111;
+}
+
+/* ======================== */
+/* TAGS DE PRIORIDADE       */
+/* ======================== */
+.tag-prioridade {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Cor baseada no que definimos no models.py */
+.tag-prioridade-baixa {
+    background-color: #5cb85c; /* Verde */
+}
+.tag-prioridade-media {
+    background-color: #f0ad4e; /* Laranja */
+}
+.tag-prioridade-alta {
+    background-color: #d9534f; /* Vermelho */
+}

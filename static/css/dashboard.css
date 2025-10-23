@@ -1,0 +1,71 @@
+/* ======================== */
+/* GRID DO DASHBOARD        */
+/* ======================== */
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os cartões */
+}
+
+/* ======================== */
+/* ESTILO BASE DO CARTÃO    */
+/* (do Figma)               */
+/* ======================== */
+.card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    border-left: 5px solid #ccc; /* Uma borda lateral neutra */
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.card .card-numero {
+    font-size: 48px;
+    font-weight: bold;
+    color: #111;
+    text-align: right; /* Alinha o número à direita, como no design */
+}
+
+/* ======================== */
+/* CORES ESPECÍFICAS        */
+/* ======================== */
+.card-pendente {
+    border-left-color: #f0ad4e; /* Laranja/Amarelo */
+}
+.card-pendente .card-numero {
+    color: #f0ad4e;
+}
+
+.card-andamento {
+    border-left-color: #0275d8; /* Azul */
+}
+.card-andamento .card-numero {
+    color: #0275d8;
+}
+
+.card-concluida {
+    border-left-color: #5cb85c; /* Verde */
+}
+.card-concluida .card-numero {
+    color: #5cb85c;
+}
+
+/* ======================== */
+/* CARTÃO DO LOGO           */
+/* ======================== */
+.card-logo {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.card-logo img {
+    max-width: 200px; /* Limita o tamanho do logo */
+    opacity: 0.6; /* Deixa o logo suave, para não brigar com o design */
+}

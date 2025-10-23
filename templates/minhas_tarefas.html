@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Minhas Tarefas
+{% endblock page_title %}
+
+
+{% block styles %}
+    {{ block.super }} <link rel="stylesheet" href="{% static 'css/lista.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+
+    <div class="lista-tarefas">
+
+        {% for tarefa in lista_de_tarefas %}
+
+        <div class="card-tarefa">
+
+            <div class="card-tarefa-header">
+                <h3>{{ tarefa.titulo }}</h3>
+
+                <span class
+                    ="tag-prioridade 
+                    {% if tarefa.prioridade == 'Baixa' %}
+                        tag-prioridade-baixa
+                    {% elif tarefa.prioridade == 'Média' %}
+                        tag-prioridade-media
+                    {% elif tarefa.prioridade == 'Alta' %}
+                        tag-prioridade-alta
+                    {% endif %}
+                ">
+                    {{ tarefa.prioridade }} </span>
+            </div>
+
+            <p><strong>Status:</strong> {{ tarefa.status }}</p>
+
+            <p>
+                <strong>Responsável:</strong> 
+                {% if tarefa.usuario_responsavel %}
+                    {{ tarefa.usuario_responsavel.username }}
+                {% else %}
+                    Ninguém
+                {% endif %}
+            </p>
+
+            {% if tarefa.observacoes %}
+                <p><strong>Observações:</strong> {{ tarefa.observacoes }}</p>
+            {% endif %}
+
+        </div>
+        {% endfor %} {% if not lista_de_tarefas %}
+            <div class="card-tarefa">
+                <p>Nenhuma tarefa encontrada.</p>
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endblock content %}

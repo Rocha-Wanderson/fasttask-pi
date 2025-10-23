@@ -1,0 +1,90 @@
+/* ======================== */
+/* ESTRUTURA DO FORMULÁRIO  */
+/* ======================== */
+.form-task {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre cada grupo de formulário */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Para os campos lado a lado (Status/Prioridade, etc.) */
+.form-group-inline {
+    display: flex;
+    gap: 16px; /* Espaço entre os dois campos */
+    width: 100%;
+}
+
+/* ======================== */
+/* ESTILO DOS RÓTULOS       */
+/* ======================== */
+.form-group label {
+    font-size: 18px;
+    font-weight: 600; /* Seminegrito */
+    color: #333;
+    margin-bottom: 8px; /* Espaço entre o rótulo e a caixa */
+}
+
+/* ======================== */
+/* ESTILO DAS CAIXAS (Inputs) */
+/* (Baseado no Figma)       */
+/* ======================== */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    height: 48px; /* Altura que definimos */
+    padding: 0 12px;
+    
+    font-size: 16px;
+    color: #333;
+    
+    background-color: white;
+    border: 1px solid #ccc; /* Contorno cinza */
+    border-radius: 8px; /* Cantos arredondados */
+    
+    /* Isso faz com que a altura inclua o padding e a borda */
+    box-sizing: border-box; 
+}
+
+/* Ajuste específico para as caixas de texto grandes */
+.form-group textarea {
+    height: 150px; /* Altura da Descrição */
+    padding: 12px;
+    resize: vertical; /* Permite ao usuário aumentar a altura (opcional) */
+}
+
+.form-group textarea#observacoes {
+    height: 120px; /* Altura das Observações */
+}
+
+/* ======================== */
+/* BOTÃO DE SALVAR          */
+/* (Baseado no Figma)       */
+/* ======================== */
+.btn-salvar {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    
+    background-color: #4C5A9E; /* Cor roxa/azul do seu design */
+    color: white;
+    
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase; /* "SALVAR TAREFA" */
+    
+    cursor: pointer; /* Muda o mouse para "mãozinha" */
+    transition: background-color 0.2s; /* Efeito suave */
+}
+
+.btn-salvar:hover {
+    background-color: #3B4A8E; /* Um pouco mais escuro ao passar o mouse */
+}
